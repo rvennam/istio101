@@ -121,7 +121,7 @@ kubectl create sa analyzer
 
 * Navigate to your guestbook dir first, for example:
 ```shell
-cd ../guestbook
+cd ../../guestbook
 ```
 
 * Add serviceaccount to your guestbook and analyzer deployments
