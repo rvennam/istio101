@@ -21,8 +21,8 @@ The service plan that you choose for an IBM Log Analysis with LogDNA instance de
 
 ## View logs in the LogDNA dashboard
 
-1. Click **View LogDNA** to open the LogDNA console
-2. Generate some load on your application by visiting it in another browser window.
+1. Click **View LogDNA** to open the LogDNA console.
+2. Generate some load on your application by visiting it in another browser window and wait 30 seconds.
 3. Keep an eye on the LogDNA console for new log statements coming from your apps. Use the filters to select guestbook. Refresh the page if you do not see any filters.
 
 ![LogDNA dashboard](../README_images/observability-logging-logdna.png)
@@ -55,7 +55,7 @@ Sysdig monitor is a third-party cloud-native container-intelligence management s
 
 2. In the Sysdig _Welcome_ wizard
    1. Select **Kubernetes** as the installation method.
-   2. It should show one or more agents already connected.
+   2. After 30 seconds or so, it should show one or more agents connected.
    3. Select **GO TO NEXT STEP**.
    4. And finally **LET'S GET STARTED**
 3. Navigate the Sysdig console to get metrics on your Kubernetes cluster, nodes, deployments, pods, containers. Explore the following:
