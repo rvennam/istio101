@@ -4,21 +4,13 @@ In this module, you will use the Managed Istio add-on to install Istio on your c
 
 Managed Istio is available as part of IBM Cloud™ Kubernetes Service. The service provides seamless installation of Istio, automatic updates and lifecycle management of control plane components, and integration with platform logging and monitoring tools.
 
-1. In a new browser window, visit [cloud.ibm.com](https://cloud.ibm.com/)
+1. Run this commmand to install Managed Istio:
 
-2. In the upper right hand corner, select the **IBM** account.
+    ```shell
+    ibmcloud ks cluster-addon-enable istio-extras --cluster $MYCLUSTER
+    ```
 
-3. Click on the left menu and select **Kubernetes**
-   ![](../README_images/kubeleftmenu.png)
-
-4. Select your cluster and visit the **Add-ons** tab.
-
-5. Click on **Install** next to **Managed Istio** and then select **Istio v1.1.5** and **Extras** 
-   ![](../README_images/istioaddon.png)
-
-6. Switch back to your Web Terminal browser window.
-
-7. Ensure that the `istio-*` Kubernetes services are deployed before you continue.
+2. Ensure that the `istio-*` Kubernetes services are deployed before you continue.
 
     ```shell
     kubectl get svc -n istio-system
@@ -46,7 +38,7 @@ Managed Istio is available as part of IBM Cloud™ Kubernetes Service. The servi
 
     ```
 
-8. Ensure the corresponding pods `istio-citadel-*`, `istio-ingressgateway-*`, `istio-pilot-*`, and `istio-policy-*` are all in **`Running`** state before you continue.
+3. Ensure the corresponding pods `istio-citadel-*`, `istio-ingressgateway-*`, `istio-pilot-*`, and `istio-policy-*` are all in **`Running`** state before you continue.
 
     ```shell
     kubectl get pods -n istio-system

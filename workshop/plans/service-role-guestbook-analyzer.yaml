@@ -1,0 +1,21 @@
+apiVersion: "rbac.istio.io/v1alpha1"
+kind: ServiceRole
+metadata:
+  name: analyzer-viewer
+  namespace: default
+spec:
+  rules:
+  - services: ["analyzer.default.svc.cluster.local"]
+    methods: ["POST"]
+---
+apiVersion: "rbac.istio.io/v1alpha1"
+kind: ServiceRoleBinding
+metadata:
+  name: bind-analyzer
+  namespace: default
+spec:
+  subjects:
+  - user: "cluster.local/ns/default/sa/guestbook"
+  roleRef:
+    kind: ServiceRole
+    name: "analyzer-viewer"
