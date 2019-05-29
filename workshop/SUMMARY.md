@@ -11,3 +11,4 @@
     * [Traffic management](exercise-6/README.md)
     * [Secure your service mesh](exercise-7/README.md)
 * [Certification](https://cognitiveclass.ai/courses/beyond-the-basics-istio-and-ibm-cloud-kubernetes-service/)
+* [Env Test](envtest.md)
