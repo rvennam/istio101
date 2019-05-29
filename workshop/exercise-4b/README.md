@@ -12,7 +12,7 @@ The service plan that you choose for an IBM Log Analysis with LogDNA instance de
 2. Create an instance of LogDNA
    1. Click on **Catalog** in the top menu bar.
    2. Search for `IBM Log Analysis with LogDNA`
-   3. Select the location where your cluster is created (eu-de).
+   3. Select the us-south location.
    4. Use the default resource group.
    5. Click **Create**.
 3. Click **Edit log sources**:
@@ -41,7 +41,7 @@ Sysdig monitor is a third-party cloud-native container-intelligence management s
 2. Create an instance of SysDig:
    1. Click on **Catalog** in the top menu bar.
    2. Search for `IBM Cloud Monitoring with Sysdig`
-   3. Select the location where your cluster is created (eu-de).
+   3. Select the us-south location.
    4. Use the default resource group.
    5. Click **Create**.
 3. Click **Edit sources**:
