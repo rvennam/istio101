@@ -15,7 +15,7 @@
 Go to cloudshell app https://ibm.biz/BdzzVC which should link to: https://cloudshell-console-ikslab.us-south.cf.cloud.ibm.com/
 
 1. Select IBM from the account drop down
-   ![](../README_images/cloudshell.png)
+   ![](README_images/cloudshell.png)
 2. Click terminal icon in top right to load terminal
 3. Run the following command:
 ```
@@ -37,4 +37,4 @@ kubectl -n istio-system port-forward \
 ```
 3. Click on the web preview icon and select port 8082.
 
-![](../README_images/grafana.png)
+![](README_images/grafana.png)
