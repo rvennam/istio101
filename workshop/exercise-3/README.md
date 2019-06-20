@@ -164,7 +164,9 @@ Create Watson Tone Analyzer in your own account.
  
   <!--COMMENT END-->
 
-1. Open the web file browser by clicking the Pen icon. ![](../README_images/fileeditor.png)
+1. Open the web file browser by clicking the Pen icon. 
+
+![](../README_images/fileeditor.png)
 
 1. Click on `Files` and navigate to `istio101/workshop/guestbook/v2/analyzer-deployment.yaml`  
 ![](../README_images/fileeditor2.png)
