@@ -159,7 +159,7 @@ EOF
    rbacconfig.rbac.istio.io/default created
    ```
    
-4.  Visit the Guestbook app from your favorite browser and validate that Guestbook V1 continue to work while Guestbook V2 will not run correctly.   For every message you wrote on the Guestbook v2 app, you will get a message such as "Error - unable to detect Tone from the Analyzer service".  It can take up to 15 seconds for the change to propogate to the envoy sidecar(s) so you may not see the error right away.
+4.  Visit the Guestbook app from your favorite browser and validate that Guestbook V1 continue to work while Guestbook V2 will not run correctly.   For every new message you write on the Guestbook v2 app, you will get a message such as "Error - unable to detect Tone from the Analyzer service".  It can take up to 15 seconds for the change to propogate to the envoy sidecar(s) so you may not see the error right away.
 
 5. Configure the Analyzer service to only allow access from the Guestbook service using service role and service role binding:
 
@@ -189,7 +189,7 @@ spec:
 EOF
 ```
 
-6.  Visit the Guestbook app from your favorite browser and validate that Guestbook V1 and V2 both work now.  It can take up to 15 seconds for the change to propogate to the envoy sidecar(s) so you may not observe Guestbook V2 to function right away.
+6.  Visit the Guestbook app from your favorite browser and validate that Guestbook V2 works now.  It can take up to 15 seconds for the change to propogate to the envoy sidecar(s) so you may not observe Guestbook V2 to function right away.
 
 ## Cleanup
 
