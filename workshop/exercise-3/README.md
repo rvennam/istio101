@@ -164,7 +164,7 @@ Watson Tone Analyzer detects the tone from the words that users enter into the G
 1. Click on `Files` and navigate to `istio101/workshop/guestbook/v2/analyzer-deployment.yaml`  
 ![](../README_images/fileeditor2.png)
 
-1. Find the env section near the end of the file. Replace YOUR_API_KEY with your API key, and replace YOUR_URL with the url from the steps above. YOUR_URL should look something like `https://gateway.watsonplatform.net/tone-analyzer/api`. Save the file and close the web file browser.
+1. Find the env section near the end of the file. Replace YOUR_API_KEY with your API key, and replace YOUR_URL with the url from the steps above. YOUR_URL should be `https://gateway.watsonplatform.net/tone-analyzer/api`. Save the file and close the web file browser.
 
 1.   Deploy the analyzer pods and service, using the `analyzer-deployment.yaml` and `analyzer-service.yaml` files found in the `guestbook/v2` directory. The analyzer service talks to Watson Tone Analyzer to help analyze the tone of a message. Ensure you are still in the `guestbook/v2` directory.
 
