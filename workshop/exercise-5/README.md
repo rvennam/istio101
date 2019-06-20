@@ -53,12 +53,6 @@ Let's leverage this feature with Istio ingress gateway:
 
 1. Choose IBM as the Account (NOT your own) -->
 
-1. Obtain the Istio ingress gateway's external IP. Get the EXTERNAL-IP of the istio-ingressgateway service via output below:
-
-    ```shell
-    kubectl get service istio-ingressgateway -n istio-system
-    ```
-    
 1. Create the NLB host with the Istio ingress gateway's public IP address:
 
     ```shell
