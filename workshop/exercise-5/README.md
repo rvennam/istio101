@@ -45,13 +45,16 @@ You can run the IBM Cloud Kubernetes Service ALB, an API gateway of your choice,
     
 Let's leverage this feature with Istio ingress gateway:
 
-<!--BCOMMENT--> 1. Switch back the `ibmcloud` CLI to the **IBM** Lab account by logging in again:
+<!--BCOMMENT--> 
+
+1. Switch back the `ibmcloud` CLI to the **IBM** Lab account by logging in again:
 
     ```shell
     ibmcloud login
     ```
 
 1. Choose IBM as the Account (NOT your own)
+
 <!-- COMMENT END -->
 
 1. Create the NLB host with the Istio ingress gateway's public IP address:
