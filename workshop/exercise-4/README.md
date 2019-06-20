@@ -1,3 +1,4 @@
+<!-- # (Optional, only do if you're able to create Services in your own account) -->
 # Exercise 4 - Observe service telemetry: metrics and tracing
 
 ### Challenges with microservices
@@ -38,7 +39,7 @@ You can read more about how [Istio mixer enables telemetry reporting](https://is
 
 ![](../README_images/guestbook1.png)
 
-1. Generate a small load to the app.
+1. Generate a small load to the app, replacing guestbook_IP with your own IP.
 
     ```shell
     for i in {1..20}; do sleep 0.5; curl http://<guestbook_IP>/; done
@@ -57,7 +58,10 @@ You can read more about how [Istio mixer enables telemetry reporting](https://is
       8082:3000
     ```
 
-2. Click on the web preview icon and select port 8082.
+2. Click on the web preview icon (an eye) and select port 8082.
+
+![](README_images/grafana.png)
+
 3. Click on Home -> Istio -> Istio Service Dashboard.
 4. Select guestbook in the Service drop down.
 5. In a different tab, visit the guestbook application and refresh the page multiple times to generate some load.
