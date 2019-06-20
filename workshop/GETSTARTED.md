@@ -1,10 +1,10 @@
 # Get Started
-In this section, you will create your own IBM Cloud account, and then get access to a IBM Cloud Lab account which contains pre-provisioned clusters. Each lab attendee will be granted access to one cluster.
+In this section, you will login to your own IBM Cloud account, and then get access to a IBM Cloud Lab account which contains pre-provisioned clusters. Each lab attendee will be granted access to one cluster.
 
-1. Create your own [IBM Cloud account](https://cloud.ibm.com/registration/?cm_mmc=Email_Events-_-Developer_Innovation-_-WW_WW-_-yla\CodeThinkGov-IBMUSFederalTechnologyEvent\Mar2019\unknown\naeastdevadvgrp\unknown\unknown\unknown\artificial-intelligence\blockchain\blockchain\containers\devops\microservices\&cm_mmca1=000019RS&cm_mmca2=10004805&cm_mmca3=M99938765&cvosrc=email.Events.M99938765&cvo_campaign=000019RS).
-2. After the email verification, confirm by logging in to https://cloud.ibm.com
-3. Go to [Grant Cluster](https://grant-cluster-kubecon.mybluemix.net/) web page and enter your IBM ID (the email you used to sign up)/
-4. Select `EU-Central` for the region.
+1. You should already have a federated IBM Cloud account using your company email address, confirm by logging in to https://cloud.ibm.com
+2. If you do not have an account, you could create your own [IBM Cloud account](https://ibm.biz/Bdzybn).
+4. Go to [Grant Cluster](http://grant-cluster-iks.mybluemix.net) web page and enter your IBM ID (the email you used to sign up), the lab key from the instructor, and select the `Frankfurt (eu-de)` region.
+5. Select `EU-Central` for the region.
 
     ![](README_images/get-cluster.png)
 
