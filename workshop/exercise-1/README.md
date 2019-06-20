@@ -9,10 +9,10 @@ For this lab, a web shell is provided for you with all the necessary tools. Use 
 
 2. Passcode will be provided by lab instructors.
 
-   ![](../README_images/cloudshell.png)
-
 3. Using the account drop down, choose the **IBM** account.
 
+   ![](../README_images/cloudshell.png)
+   
 4. Click on the Terminal icon to launch your web shell.
 
 ## Access your cluster
