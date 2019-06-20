@@ -6,7 +6,7 @@ In this section, you will login to your own IBM Cloud account, and then get acce
 4. Go to [Grant Cluster](http://grant-cluster-iks.mybluemix.net) web page and enter your IBM ID (the email you used to sign up), the lab key from the instructor, and select the `Frankfurt (eu-de)` region.
 5. Select `EU-Central` for the region.
 
-    ![](README_images/get-cluster.png)
+    ![](README_images/get-clusters.png)
 
 5. You will be added to the IBM Lab account and granted access to a cluster. Note the name of your cluster. It will be something like: `myclusterXXX`.
 6. Refresh your [IBM Cloud Dashboard](https://cloud.ibm.com)
