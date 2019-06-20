@@ -1,6 +1,6 @@
-# Exercise 4 - Logging and Monitoring
+# Exercise 4 - Monitoring
 
-## Using IBM Log Analysis with LogDNA
+<!-- ## Using IBM Log Analysis with LogDNA
 
 IBM Log Analysis with LogDNA is a third-party service that you can include as part of your IBM Cloud architecture to add log management capabilities. IBM Log Analysis with LogDNA is operated by LogDNA in partnership with IBM.
 
@@ -12,7 +12,7 @@ The service plan that you choose for an IBM Log Analysis with LogDNA instance de
 2. Create an instance of LogDNA
    1. Click on **Catalog** in the top menu bar.
    2. Search for `IBM Log Analysis with LogDNA`
-   3. Select the us-south location.
+   3. Select the eu-de location.
    4. Use the default resource group.
    5. Click **Create**.
 3. Click **Edit log sources**:
@@ -29,7 +29,7 @@ The service plan that you choose for an IBM Log Analysis with LogDNA instance de
 
 {% hint style='tip' %}
 Find more about IBM Log Analysis with LogDNA in the [IBM Cloud documentation](https://cloud.ibm.com/docs/services/Log-Analysis-with-LogDNA/index.html#getting-started).
-{% endhint %}
+{% endhint %} -->
 
 ## Using IBM Cloud Monitoring with Sysdig
 
@@ -41,7 +41,7 @@ Sysdig monitor is a third-party cloud-native container-intelligence management s
 2. Create an instance of SysDig:
    1. Click on **Catalog** in the top menu bar.
    2. Search for `IBM Cloud Monitoring with Sysdig`
-   3. Select the us-south location.
+   3. Select the eu-de location.
    4. Use the default resource group.
    5. Click **Create**.
 3. Click **Edit sources**:
