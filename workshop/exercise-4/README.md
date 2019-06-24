@@ -1,4 +1,3 @@
-<!--BCOMMENT # (Optional, only do if you're able to create Services in your own account) -->
 # Exercise 4 - Observe service telemetry: metrics and tracing
 
 ### Challenges with microservices

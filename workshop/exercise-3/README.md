@@ -137,7 +137,7 @@ Watson Tone Analyzer detects the tone from the words that users enter into the G
 
 <!--BCOMMENT--> 
 
-Create Watson Tone Analyzer in your own account.
+<!-- Create Watson Tone Analyzer in your own account.
 
 1. Switch to your own account by logging in again.
 
@@ -161,7 +161,7 @@ Create Watson Tone Analyzer in your own account.
     ```shell
     ibmcloud resource service-key tone-analyzer-key
     ``` 
- 
+  -->
   <!--COMMENT END-->
 
 1. Open the web file browser by clicking the Pen icon. 

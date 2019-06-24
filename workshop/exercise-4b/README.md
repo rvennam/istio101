@@ -1,4 +1,4 @@
-# Exercise 4 - Monitoring
+# Exercise 4 - Monitoring (Optional, only do this section if you're able to create Services in your own account)
 
 <!-- ## Using IBM Log Analysis with LogDNA
 
