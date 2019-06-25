@@ -99,8 +99,7 @@ Kiali is an open-source project that installs as an add-on on top of Istio to vi
         $(kubectl -n istio-system get pod -l app=kiali -o jsonpath='{.items[0].metadata.name}') \
         8084:20001
     ```
-2. Click on the web preview icon and select port 8084 to access the Kiali dashboard. 
-3. If you see a `404`, add `/kiali` at the end of the URL. Login with the following username/password: `admin/admin`.
+2. Click on the web preview icon and select port 8084 to access the Kiali dashboard. You will need to add `/kiali` to the end of the URL, otherwise you will see a `404`. Login with the following username/password: `admin/admin`.
 4. Click the "Graph" tab on the left side and select the default namespace to see the a visual service graph of the various services in your Istio mesh. You can see request rates as well by clicking the "Edge Labels" tab and choosing "Traffic rate per second".
 5. In a different tab, visit the guestbook application and refresh the page multiple times to generate some load.
 
