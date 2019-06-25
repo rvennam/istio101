@@ -63,11 +63,15 @@ This section is optional -- Only do this section if you're able to create Servic
    2. Under **Dashboard**, select **My Shared Dashboards / HTTP Overview** to get a global view of the cluster HTTP load.
    3. Under **Dashboard**, select **My Shared Dashboards / Overview by Host** to understand how nodes are currently performing.
    4. Under **Dashboard**, select **Add Dashboard** and add the **Istio 1.0 Service** to get Istio specific metrics. If you don't see the dashboard yet, wait about 30 seconds and refresh the page.
-
 ![Sysdig dashboard](../README_images/observability-monitoring-sysdig.png)
 
 {% hint style='tip' %}
 Find more about IBM Cloud Monitoring with Sysdig in the [IBM Cloud documentation](https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig/index.html#getting-started).
 {% endhint %}
+
+4. After you've finished, DELETE the sysdig service.  You can do this from your [resources list](https://cloud.ibm.com/resources). 
+
+![Sysdig dashboard](../README_images/delete-service.png)
+
 
 #### [Continue to Exercise 5 - Expose the service mesh with the Istio Ingress Gateway](../exercise-5/README.md)
