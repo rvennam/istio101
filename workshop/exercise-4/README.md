@@ -59,7 +59,7 @@ You can read more about how [Istio mixer enables telemetry reporting](https://is
 
 2. Click on the web preview icon (an eye) and select port 8082.
 
-![](README_images/grafana.png)
+![](README_images/webpreview1.png)
 
 3. Click on Home -> Istio -> Istio Service Dashboard.
 4. Select guestbook in the Service drop down.
