@@ -59,8 +59,8 @@ This section is optional -- Only do this section if you're able to create Servic
     4. And finally **LET'S GET STARTED**
 3. Navigate the Sysdig console to get metrics on your Kubernetes cluster, nodes, deployments, pods, containers. Explore the following:
    1. Under **Explore**, select **Containerized Apps** to view raw metrics for all workloads running on the cluster.
-   2. Under **Dashboard**, select **My Shared Dashboards / HTTP Overview** to get a global view of the cluster HTTP load.
-   3. Under **Dashboard**, select **My Shared Dashboards / Overview by Host** to understand how nodes are currently performing.
+   2. Under **Dashboard**, select **My Dashboards / HTTP Overview** to get a global view of the cluster HTTP load.
+   3. Under **Dashboard**, select **My Dashboards / Overview by Host** to understand how nodes are currently performing.
    4. Under **Dashboard**, select **Add Dashboard** and add the **Istio 1.0 Service** to get Istio specific metrics. If you don't see the dashboard yet, wait about 30 seconds and refresh the page.
 ![Sysdig dashboard](../README_images/observability-monitoring-sysdig.png)
 
