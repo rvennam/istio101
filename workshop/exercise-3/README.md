@@ -133,11 +133,9 @@ These commands will inject the Istio Envoy sidecar into the guestbook pods, as w
 
 
 ### Use Watson Tone Analyzer
-Watson Tone Analyzer detects the tone from the words that users enter into the Guestbook app. The tone is converted to the corresponding emoticons. You will use the Watson Tone Analyzer API key given to you as a part of this lab.
+Watson Tone Analyzer detects the tone from the words that users enter into the Guestbook app. The tone is converted to the corresponding emoticons.
 
-<!--BCOMMENT--> 
-
-<!-- Create Watson Tone Analyzer in your own account.
+Create Watson Tone Analyzer in your own account.
 
 1. Switch to your own account by logging in again.
 
@@ -145,24 +143,22 @@ Watson Tone Analyzer detects the tone from the words that users enter into the G
     ibmcloud login
     ```
 
-2. Choose your own account (NOT IBM).
-3. Create Watson Tone Analyzer service.
+1. Choose your own account (NOT IBM).
+1. Create Watson Tone Analyzer service.
 
     ```shell
     ibmcloud resource service-instance-create my-tone-analyzer-service tone-analyzer lite eu-de
     ```
-4. Create the service key for the Tone Analyzer service. This command should output the credentials you just created. You will need the value for **apikey** & **url** later.
+1. Create the service key for the Tone Analyzer service. This command should output the credentials you just created. You will need the value for **apikey** & **url** later.
 
     ```shell
     ibmcloud resource service-key-create tone-analyzer-key Manager --instance-name my-tone-analyzer-service
     ```
-5. If you need to get the service-keys later, you can use the following command:
+1. If you need to get the service-keys later, you can use the following command:
 
     ```shell
     ibmcloud resource service-key tone-analyzer-key
     ``` 
-  -->
-  <!--COMMENT END-->
 
 1. Open the web file browser by clicking the Pen icon. 
 
@@ -174,9 +170,11 @@ Watson Tone Analyzer detects the tone from the words that users enter into the G
 
 1. Navigate to `istio101/workshop/guestbook/v2/analyzer-deployment.yaml`
 
-    ![](../README_images/fileeditor2.png)
+![](../README_images/fileeditor2.png)
+
 
 1. Find the env section near the end of the file. Replace YOUR_API_KEY with the API_KEY provided earlier. If you did not save this API_KEY, you can find it on the [grant cluster app](https://grant-cluster-kubeconeu.mybluemix.net/). YOUR_URL should be edited to be `https://gateway.watsonplatform.net/tone-analyzer/api`. Save the file and close the web file browser.
+
 
 Note: You may have trouble editing this file with some browsers, particularly Edge. Try clicking the name of the file in the top tab, and then moving your cursor and making edits using the arrow keys and keyboard. `ctrl+c` is copy, and `ctrl+v` is paste.
 
