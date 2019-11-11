@@ -144,10 +144,13 @@ Create Watson Tone Analyzer in your own account.
     ```
 
 1. Choose your own account (NOT IBM).
-1. Create Watson Tone Analyzer service.
+
+1. If prompted to choose a region, select us-south.
+
+1. Create Watson Tone Analyzer service in the `default` resource group.
 
     ```shell
-    ibmcloud resource service-instance-create my-tone-analyzer-service tone-analyzer lite eu-de
+    ibmcloud resource service-instance-create my-tone-analyzer-service tone-analyzer lite us-south -g default
     ```
 1. Create the service key for the Tone Analyzer service. This command should output the credentials you just created. You will need the value for **apikey** & **url** later.
 
@@ -173,10 +176,10 @@ Create Watson Tone Analyzer in your own account.
 ![](../README_images/fileeditor2.png)
 
 
-1. Find the env section near the end of the file. Replace YOUR_API_KEY with the API_KEY provided earlier. If you did not save this API_KEY, you can find it on the [grant cluster app](https://grant-cluster-kubeconeu.mybluemix.net/). YOUR_URL should be edited to be `https://gateway.watsonplatform.net/tone-analyzer/api`. Save the file and close the web file browser.
+1. Find the env section near the end of the file. Replace YOUR_API_KEY with the API_KEY provided earlier. YOUR_URL should be edited to be `https://gateway.watsonplatform.net/tone-analyzer/api`. Save the file and close the web file browser.
 
 
-Note: You may have trouble editing this file with some browsers, particularly Edge. Try clicking the name of the file in the top tab, and then moving your cursor and making edits using the arrow keys and keyboard. `ctrl+c` is copy, and `ctrl+v` is paste.
+Note: You may have trouble editing this file with some browsers, particularly Edge. If you're having trouble, try clicking the name of the file in the top tab, and then moving your cursor and making edits using the arrow keys and keyboard. `ctrl+c` is copy, and `ctrl+v` is paste.
 
 1.   Deploy the analyzer pods and service, using the `analyzer-deployment.yaml` and `analyzer-service.yaml` files found in the `guestbook/v2` directory. The analyzer service talks to Watson Tone Analyzer to help analyze the tone of a message. Ensure you are still in the `guestbook/v2` directory.
 
