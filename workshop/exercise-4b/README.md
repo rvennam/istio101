@@ -52,7 +52,6 @@ This section is optional -- Only do this section if you're able to create Servic
 ## View SysDig Dashboard
 
 1. Scroll down and click on **View SysDig**
-
 2. In the Sysdig _Welcome_ wizard:
     1. Select **Kubernetes** as the installation method.
     2. After 30 seconds or so, it should show one or more agents connected.
