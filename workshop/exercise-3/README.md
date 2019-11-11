@@ -168,7 +168,11 @@ Watson Tone Analyzer detects the tone from the words that users enter into the G
 
 ![](../README_images/fileeditor.png)
 
-1. Click on `Files` and navigate to `istio101/workshop/guestbook/v2/analyzer-deployment.yaml`  
+1. Click on the File Explorer icon to see the available files.
+
+![](../README_images/file_explorer.png)
+
+1. Navigate to `istio101/workshop/guestbook/v2/analyzer-deployment.yaml`  
 ![](../README_images/fileeditor2.png)
 
 1. Find the env section near the end of the file. Replace YOUR_API_KEY with the API_KEY provided earlier. If you did not save this API_KEY, you can find it on the [grant cluster app](https://grant-cluster-kubeconeu.mybluemix.net/). YOUR_URL should be edited to be `https://gateway.watsonplatform.net/tone-analyzer/api`. Save the file and close the web file browser.
