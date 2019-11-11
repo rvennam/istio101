@@ -96,11 +96,11 @@ spec:
       mode: ISTIO_MUTUAL
 EOF
 ```
+Output:
 
-    Output:
-    ```
-    destinationrule.networking.istio.io/route-with-mtls-for-analyzer created
-    ```
+```
+destinationrule.networking.istio.io/route-with-mtls-for-analyzer created
+```
 
 ## Verifying the Authenticated Connection
 
