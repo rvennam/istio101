@@ -1,6 +1,6 @@
 # Exercise 4 - Monitoring (Optional, only do this section if you're able to create Services in your own account)
 
-## Using IBM Log Analysis with LogDNA
+<!-- ## Using IBM Log Analysis with LogDNA
 
 IBM Log Analysis with LogDNA is a third-party service that you can include as part of your IBM Cloud architecture to add log management capabilities. IBM Log Analysis with LogDNA is operated by LogDNA in partnership with IBM.
 
@@ -12,16 +12,16 @@ The service plan that you choose for an IBM Log Analysis with LogDNA instance de
 2. Create an instance of LogDNA
    1. Click on **Catalog** in the top menu bar.
    2. Search for `IBM Log Analysis with LogDNA`
-   3. Select the eu-de location.
+   3. Select the Dallas location.
    4. Use the default resource group.
    5. Click **Create**.
 3. Click **Edit log sources**:
-   1. Select **Kubernetes** as a source
+   1. Ensure **Kubernetes** is selected as a source
    2. Run the listed commands against your Kubernetes cluster in the web terminal window.
 
 ## View logs in the LogDNA dashboard
 
-1. Click **View LogDNA** to open the LogDNA console.
+1. On the IBM Log Analysis page, click **View LogDNA** to open the LogDNA console.
 2. Generate some load on your application by visiting it in another browser window and wait 30 seconds.
 3. Keep an eye on the LogDNA console for new log statements coming from your apps. Use the filters to select guestbook. Refresh the page if you do not see any filters.
 
@@ -29,7 +29,7 @@ The service plan that you choose for an IBM Log Analysis with LogDNA instance de
 
 {% hint style='tip' %}
 Find more about IBM Log Analysis with LogDNA in the [IBM Cloud documentation](https://cloud.ibm.com/docs/services/Log-Analysis-with-LogDNA/index.html#getting-started).
-{% endhint %}
+{% endhint %} -->
 
 ## Using IBM Cloud Monitoring with Sysdig
 
@@ -37,7 +37,7 @@ This section is optional -- Only do this section if you're able to create Servic
 
 ## Create a Sysdig service instance
 
-1. From the IBM Cloud Dashboard, select your Account from the top menu bar.
+1. From the [IBM Cloud Dashboard](https://cloud.ibm.com/), select your Account from the top menu bar.
 2. Create an instance of SysDig:
    1. Click on **Catalog** in the top menu bar.
    2. Search for `IBM Cloud Monitoring with Sysdig`
