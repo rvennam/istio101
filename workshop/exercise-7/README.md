@@ -96,6 +96,7 @@ spec:
       mode: ISTIO_MUTUAL
 EOF
 ```
+
     Output:
     ```
     destinationrule.networking.istio.io/route-with-mtls-for-analyzer created
