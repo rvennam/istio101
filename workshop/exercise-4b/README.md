@@ -41,7 +41,7 @@ This section is optional -- Only do this section if you're able to create Servic
 2. Create an instance of SysDig:
    1. Click on **Catalog** in the top menu bar.
    2. Search for `IBM Cloud Monitoring with Sysdig`
-   3. Select the eu-de location.
+   3. Select the Dallas location.
    4. Use the default resource group.
    5. Click **Create**.
 3. Click **Edit sources**:
@@ -53,11 +53,11 @@ This section is optional -- Only do this section if you're able to create Servic
 
 1. Scroll down and click on **View SysDig**
 
-2. In the Sysdig _Welcome_ wizard
-   1. Select **Kubernetes** as the installation method.
-   2. After 30 seconds or so, it should show one or more agents connected.
-   3. Select **GO TO NEXT STEP**.
-   4. And finally **LET'S GET STARTED**
+2. In the Sysdig _Welcome_ wizard:
+    1. Select **Kubernetes** as the installation method.
+    2. After 30 seconds or so, it should show one or more agents connected.
+    3. Select **GO TO NEXT STEP**.
+    4. And finally **LET'S GET STARTED**
 3. Navigate the Sysdig console to get metrics on your Kubernetes cluster, nodes, deployments, pods, containers. Explore the following:
    1. Under **Explore**, select **Containerized Apps** to view raw metrics for all workloads running on the cluster.
    2. Under **Dashboard**, select **My Shared Dashboards / HTTP Overview** to get a global view of the cluster HTTP load.
