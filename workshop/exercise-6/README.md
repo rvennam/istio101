@@ -62,7 +62,11 @@ spec:
 
 The `VirtualService` defines a rule that captures all HTTP traffic coming in through the Istio ingress gateway, `guestbook-gateway`, and routes 100% of the traffic to pods of the guestbook service with label "version: v1". A subset or version of a route destination is identified with a reference to a named service subset which must be declared in a corresponding `DestinationRule`. Since there are three instances matching the criteria of hostname `guestbook` and subset `version: v1`, by default Envoy will send traffic to all three instances in a round robin manner.
 
-View the guestbook application using the `$NLB_HOSTNAME` specified in [Exercise 5](../exercise-5/README.md) and enter it as a URL in Firefox or Chrome web browsers.
+View the guestbook application using the `$NLB_HOSTNAME` specified in [Exercise 5](../exercise-5/README.md) and enter it as a URL in Firefox or Chrome web browsers. You can use the echo command to get this value, if you don't remember it.
+
+```
+echo $NLB_HOSTNAME
+```
 
 To enable the Istio service mesh for A/B testing against the new service version, modify the original `VirtualService` rule:
 

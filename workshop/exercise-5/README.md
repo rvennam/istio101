@@ -97,7 +97,7 @@ Let's leverage this feature with Istio ingress gateway:
 1. Monitor the health check of the NLB host for Istio ingress gateway:
 
     ```shell
-    ibmcloud ks nlb-dns-monitor-status --cluster $MYCLUSTER
+    ibmcloud ks nlb-dns monitor status --cluster $MYCLUSTER
     ```
     
     After waiting for a bit, you should start to see the health monitor's status changed to Enabled.
