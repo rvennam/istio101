@@ -8,7 +8,7 @@ The service plan that you choose for an IBM Log Analysis with LogDNA instance de
 
 ## Configure your cluster with LogDNA
 
-1. From the IBM Cloud Dashboard, select your Account from the top menu bar, NOT the IBM account.
+1. From the [IBM Cloud Dashboard](https://cloud.ibm.com/), select your Account from the top menu bar, NOT the IBM account.
 2. Create an instance of LogDNA
    1. Click on **Catalog** in the top menu bar.
    2. Search for `IBM Log Analysis with LogDNA`
