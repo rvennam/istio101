@@ -78,16 +78,19 @@ Managed Istio is available as part of IBM Cloud™ Kubernetes Service. The servi
    ```
    Sample output:
    ```
-    client version: 1.1.7
-    citadel version: 1.1.7
-    egressgateway version: 1.1.7
-    galley version: 1.1.7
-    ingressgateway version: 1.1.7
-    pilot version: 1.1.7
-    policy version: 1.1.7
-    sidecar-injector version: 1.1.7
-    telemetry version: 1.1.7
+    client version: 1.1.9
+    citadel version: 1.3.3
+    egressgateway version: 1.3.3
+    egressgateway version: 1.3.3
+    galley version: 1.3.3
+    ingressgateway version: 1.3.3
+    ingressgateway version: 1.3.3
+    pilot version: 1.3.3
+    policy version: 1.3.3
+    sidecar-injector version: 1.3.3
+    telemetry version: 1.3.3
    ```
 
 
 #### [Continue to Exercise 3 - Deploy Guestbook with Istio Proxy](../exercise-3/README.md)
+
