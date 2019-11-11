@@ -7,7 +7,7 @@ Managed Istio is available as part of IBM Cloud™ Kubernetes Service. The servi
 1. Run this commmand to install Managed Istio:
 
     ```shell
-    ibmcloud ks cluster-addon-enable istio-extras --cluster $MYCLUSTER
+    ibmcloud ks cluster addon enable istio-extras --cluster $MYCLUSTER
     ```
 
 2. Ensure that the `istio-*` Kubernetes services are deployed before you continue. This might take up to 30 seconds.
