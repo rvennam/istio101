@@ -1,4 +1,4 @@
-# Exercise 4 - Monitoring (Optional, only do this section if you're able to create Services in your own account)
+# Exercise 4 - Monitoring
 
 <!-- ## Using IBM Log Analysis with LogDNA
 
@@ -33,20 +33,23 @@ Find more about IBM Log Analysis with LogDNA in the [IBM Cloud documentation](ht
 
 ## Using IBM Cloud Monitoring with Sysdig
 
-This section is optional -- Only do this section if you're able to create Services in your own account. Sysdig monitor is a third-party cloud-native container-intelligence management system. You can use this to gain operational visibility for your applications, services, and platform. Sysdig offers administrators, DevOps teams and developers advanced features to monitor and troubleshoot, define alerts, and design custom views.
+The IBM Cloud™ Monitoring with Sysdig service is a fully managed enterprise-grade monitoring service. You get deep container visibility, service-oriented views and comprehensive metrics. You can use this to gain operational visibility for your applications, services, and platform. Sysdig offers administrators, DevOps teams and developers advanced features to monitor and troubleshoot, define alerts, and design custom views.
 
 ## Create a Sysdig service instance
 
-1. From the [IBM Cloud Dashboard](https://cloud.ibm.com/), select your Account from the top menu bar.
+1. From the [IBM Cloud Dashboard](https://cloud.ibm.com/), select *your own Account* from the top menu bar.
 2. Create an instance of SysDig:
    1. Click on **Catalog** in the top menu bar.
    2. Search for `IBM Cloud Monitoring with Sysdig`
-   3. Select the Dallas location.
+   3. Select the London, Washington DC or Frankfurt region.
    4. Use the default resource group.
    5. Click **Create**.
 3. Click **Edit sources**:
    1. Select **Kubernetes** as a source
-   2. Run the listed command in the **Install Sysdig Agent to your cluster** section.
+   2. Copy listed command in the **Install Sysdig Agent to your cluster** section.
+   3. Paste the command into your Shell and add this to the end of the command ` --agent-version 0.92.1`
+   ![Sysdig specify agent](../README_images/sysdig-specify-agent.png)
+   
 
 
 ## View SysDig Dashboard
