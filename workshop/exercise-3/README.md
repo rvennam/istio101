@@ -150,7 +150,7 @@ Create Watson Tone Analyzer in your own account.
 1. Create Watson Tone Analyzer service in the `default` resource group.
 
     ```shell
-    ibmcloud resource service-instance-create my-tone-analyzer-service tone-analyzer lite us-south -g default
+    ibmcloud resource service-instance-create my-tone-analyzer-service tone-analyzer lite us-south -g Default
     ```
 1. Create the service key for the Tone Analyzer service. This command should output the credentials you just created. You will need the value for **apikey** & **url** later.
 
