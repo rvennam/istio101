@@ -38,7 +38,7 @@ The IBM Cloud™ Monitoring with Sysdig service is a fully managed enterprise-gr
 ## Create a Sysdig service instance
 
 1. From the [IBM Cloud Dashboard](https://cloud.ibm.com/), select *your own Account* from the top menu bar.
-2. Create an instance of SysDig:
+2. Create an instance of Sysdig:
    1. Click on **Catalog** in the top menu bar.
    2. Search for `IBM Cloud Monitoring with Sysdig`
    3. Select the London, Washington DC or Frankfurt region.
@@ -50,7 +50,7 @@ The IBM Cloud™ Monitoring with Sysdig service is a fully managed enterprise-gr
    3. Paste the command into your Shell and add this to the end of the command ` --agent-version 0.92.1`
    ![Sysdig specify agent](../README_images/sysdig-specify-agent.png)
    
-
+Wait 10 minutes. You just installed the Sysdig monitoring agent into the cluster. The agent will start scraping metrics from Kubernetes and Istio and send it to the Sysdig backend. This process can take around 10 minutes. You can wait, or you can jump ahead to the next section and come back later.
 
 ## View SysDig Dashboard
 
