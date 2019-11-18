@@ -38,14 +38,7 @@ The IBM Cloud™ Monitoring with Sysdig service is a fully managed enterprise-gr
 ## Create a Sysdig service instance
 
 1. From the [IBM Cloud Dashboard](https://cloud.ibm.com/), select *IBM* account from the top menu bar.
-2. Create an instance of Sysdig:
-   1. Click on **Catalog** in the top menu bar.
-   2. Search for `IBM Cloud Monitoring with Sysdig`
-   3. Name it something unique.
-   3. Select the London, Washington DC or Frankfurt region.
-   4. Use the default resource group.
-   5. Click **Create**.
-3. Click **Edit sources**:
+3. Click **Edit sources** next to any existing instance
    1. Select **Kubernetes** as a source
    2. Copy listed command in the **Install Sysdig Agent to your cluster** section.
    3. Paste the command into your Shell and add this to the end of the command ` --agent-version 0.92.1`
