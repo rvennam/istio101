@@ -64,33 +64,6 @@ Managed Istio is available as part of IBM Cloud™ Kubernetes Service. The servi
 
     Congratulations! You successfully installed Istio into your cluster.
 
-## Verify Installation
-<!-- 1. Download the latest Istio installation files:
-
-    ```shell
-    curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.1.5 sh -
-    ```
-
-2. Add the `istioctl` client to your PATH by copying and pasting the `export PATH=` line in the output of the previous command. Your command will look something like `export PATH="$PATH:/h...` -->
-1. Verify the client and server version using the istioctl CLI:
-   ```shell
-   istioctl version --remote -s
-   ```
-   Sample output:
-   ```
-    client version: 1.1.9
-    citadel version: 1.3.3
-    egressgateway version: 1.3.3
-    egressgateway version: 1.3.3
-    galley version: 1.3.3
-    ingressgateway version: 1.3.3
-    ingressgateway version: 1.3.3
-    pilot version: 1.3.3
-    policy version: 1.3.3
-    sidecar-injector version: 1.3.3
-    telemetry version: 1.3.3
-   ```
-
 
 #### [Continue to Exercise 3 - Deploy Guestbook with Istio Proxy](../exercise-3/README.md)
 
