@@ -66,6 +66,8 @@ Wait 10 minutes. You just installed the Sysdig monitoring agent into the cluster
    2. Under **Dashboard**, select **My Dashboards / HTTP Overview** to get a global view of the cluster HTTP load.
    3. Under **Dashboard**, select **My Dashboards / Overview by Host** to understand how nodes are currently performing.
    4. Under **Explore** > **Cluster and Nodes** > your cluster > **Kubernetes Cluster and Node Capacity** > **Default Dashboards** > **Applications** > **Istio 1.0 Service** to get Istio specific metrics. If you don't see the dashboard yet, wait about 30 seconds and refresh the page.
+
+
 ![Sysdig dashboard](../README_images/sysdig2.png)
 
 {% hint style='tip' %}
