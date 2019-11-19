@@ -3,9 +3,9 @@
 You must already have an IBM account, with a cluster created or assigned to you as documented in the [previous step](../GETSTARTED.md).
 
 ## Connect to your cluster using the lab web shell (Cloud Shell)
-For this lab, a web shell is provided for you with all the necessary tools. Use this web shell to perform the tasks in this lab. If you are having problems with this web shell, you can use a local docker container and follow the instructions [here](https://github.com/rvennam/istio101/blob/docker-env/workshop/exercise-1/README.md) instead.
+For this lab, a web shell is provided for you with all the necessary tools. Use this web shell to perform the tasks in this lab. 
 
-1. Using Chrome or Firefox, go to the [Cloud Shell](https://workshop.shell.cloud.ibm.com/) and enter the passcode provided by the lab instructors. Click Continue.
+1. Using Chrome or Firefox, [**click here to launch Cloud Shell**](https://workshop.shell.cloud.ibm.com/) and enter the passcode provided by the lab instructors. Click Continue.
 
 1. Using the account drop down, choose the **IBM** account.
 
