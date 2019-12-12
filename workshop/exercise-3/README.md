@@ -152,7 +152,10 @@ Create Watson Tone Analyzer in your own account.
     ```shell
     ibmcloud resource service-instance-create my-tone-analyzer-service tone-analyzer lite us-south -g default
     ```
-    > If the previous command errors, it might be due to your resource group name. See all resource groups by running `ibmcloud resource groups`. If it fails due to the region, try `au-syd` rather than `us-south`.
+
+    > If the previous command errors, it might be due to your resource group name. Try -g Default rather than default
+    
+    > See all resource groups by running `ibmcloud resource groups`. If it fails due to the region, try `au-syd` rather than `us-south`.
 
 1. Create the service key for the Tone Analyzer service. This command should output the credentials you just created. You will need the value for **apikey** & **url** later.
 
@@ -178,7 +181,7 @@ Create Watson Tone Analyzer in your own account.
 ![](../README_images/fileeditor2.png)
 
 
-1. Find the env section near the end of the file. Replace YOUR_API_KEY with the API_KEY provided earlier. YOUR_URL should be edited to be `https://gateway.watsonplatform.net/tone-analyzer/api`. Save the file and close the web file browser.
+1. Find the env section near the end of the file. Replace YOUR_API_KEY with the API_KEY provided earlier. YOUR_URL should be edited to be `https://gateway.watsonplatform.net/tone-analyzer/api`. If you created the service in `au-syd`, this URL should instead be: `https://gateway-syd.watsonplatform.net/tone-analyzer/api` Save the file and close the web file browser.
 
 
 Note: You may have trouble editing this file with some browsers, particularly Edge. If you're having trouble, try clicking the name of the file in the top tab, and then moving your cursor and making edits using the arrow keys and keyboard. `ctrl+c` is copy, and `ctrl+v` is paste.
