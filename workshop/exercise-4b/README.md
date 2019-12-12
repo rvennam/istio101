@@ -37,8 +37,8 @@ The IBM Cloud™ Monitoring with Sysdig service is a fully managed enterprise-gr
 
 ## Create a Sysdig service instance
 
-1. From the [IBM Cloud Dashboard](https://cloud.ibm.com/), select *IBM* account from the top menu bar.
-3. Click **Edit sources** next to any existing instance
+1. From the [IBM Cloud Monitoring Dashboard](https://cloud.ibm.com/observe/monitoring), select *IBM* account from the top menu bar.
+3. Click **Edit sources** next to any existing Sysdig instance
    1. Select **Kubernetes** as a source
    2. Copy listed command in the **Install Sysdig Agent to your cluster** section.
    3. Paste the command into your Shell and add this to the end of the command ` --agent-version 0.92.1`
@@ -67,9 +67,9 @@ Wait 10 minutes. You just installed the Sysdig monitoring agent into the cluster
 Find more about IBM Cloud Monitoring with Sysdig in the [IBM Cloud documentation](https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig/index.html#getting-started).
 {% endhint %}
 
-4. After you've finished, DELETE the sysdig service.  You can do this from your [resources list](https://cloud.ibm.com/resources). 
+<!-- 4. After you've finished, DELETE the sysdig service.  You can do this from your [resources list](https://cloud.ibm.com/resources). 
 
-![Sysdig dashboard](../README_images/delete-service.png)
+![Sysdig dashboard](../README_images/delete-service.png) -->
 
 
 #### [Continue to Exercise 5 - Expose the service mesh with the Istio Ingress Gateway](../exercise-5/README.md)

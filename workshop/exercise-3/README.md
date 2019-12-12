@@ -98,7 +98,7 @@ The Redis database is a service that you can use to persist the data of your app
     kubectl apply -f guestbook-deployment.yaml
     ```
 
-These commands will inject the Istio Envoy sidecar into the guestbook pods, as well as deploy the Guestbook app on to the Kubernetes cluster. Here we have two versions of deployments, a new version (`v2`) in the current directory, and a previous version (`v1`) in a sibling directory. They will be used in future sections to showcase the Istio traffic routing capabilities.
+These commands deploy the Guestbook app on to the Kubernetes cluster. Since we enabled automation sidecar injection, these pods will be also include an Envoy sidecar as they are started in the cluster. Here we have two versions of deployments, a new version (`v2`) in the current directory, and a previous version (`v1`) in a sibling directory. They will be used in future sections to showcase the Istio traffic routing capabilities.
 
 2. Create the guestbook service.
 
@@ -147,11 +147,13 @@ Create Watson Tone Analyzer in your own account.
 
 1. If prompted to choose a region, select us-south.
 
-1. Create Watson Tone Analyzer service in the `default` resource group.
+1. Create Watson Tone Analyzer service in the `default` resource group. 
 
     ```shell
     ibmcloud resource service-instance-create my-tone-analyzer-service tone-analyzer lite us-south -g Default
     ```
+    > If the previous command errors, it might be due to your resource group name. See all resource groups by running `ibmcloud resource groups`. If it fails due to the region, try `au-syd` rather than `us-south`.
+
 1. Create the service key for the Tone Analyzer service. This command should output the credentials you just created. You will need the value for **apikey** & **url** later.
 
     ```shell
