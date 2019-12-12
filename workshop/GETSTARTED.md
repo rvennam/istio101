@@ -5,7 +5,7 @@ In this section, you will login to your own IBM Cloud account, and then get acce
 
 1. After the email verification, confirm by logging in to https://cloud.ibm.com.
 
-1. Go to [Grant Cluster](https://grant-cluster-iks.mybluemix.net/) web page and enter your IBM ID (the email you used to sign up) and the lab key from the instructor
+1. Go to [Grant Cluster](https://kubeforumsydney.mybluemix.net/) web page and enter your IBM ID (the email you used to sign up) and the lab key from the instructor
 
     ![](README_images/get-clusters-no-region.png)
 
