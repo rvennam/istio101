@@ -126,6 +126,24 @@ If mTLS is working correctly, the Guestbook app should continue to operate as ex
 
 To verify this, you can use an experimental `istioctl` feature to describe pods.
 
+<!-- First, ensure you are using the latest version of `istioctl`:
+
+```shell
+curl -sL https://istio.io/downloadIstioctl | sh -
+export PATH=$HOME/.istioctl/bin:$PATH
+```
+
+Verify it's installed properly:
+
+```shell
+istioctl version --remote=false
+```
+
+Output:
+```shell
+1.4.2
+``` -->
+
 1. First, get your pods:
 
     ```shell
@@ -140,7 +158,7 @@ To verify this, you can use an experimental `istioctl` feature to describe pods.
 
 3. You should see something like this:
 
-    ```
+    ```shell
     Pod: guestbook-v2-f9f597d8d-zbhkt
       Pod Ports: 3000 (guestbook), 15090 (istio-proxy)
     --------------------
@@ -151,8 +169,7 @@ To verify this, you can use an experimental `istioctl` feature to describe pods.
           (Non-matching subsets v1)
       Traffic Policy TLS Mode: ISTIO_MUTUAL
     Pod is STRICT and clients are ISTIO_MUTUAL
-
-
+    
     Exposed on Ingress Gateway http://159.23.74.230
     VirtualService: virtual-service-guestbook
       1 HTTP route(s)
