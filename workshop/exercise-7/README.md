@@ -46,44 +46,44 @@ When Envoy proxies establish a connection, they exchange and validate certificat
 
    First, we create a `MeshPolicy` for configuring the receiving end to use mTLS. The following two destination rules will then configure the client side to use mTLS. We'll update the previously created DestinationRule to include mTLS and create a new blanket rule (`*.local`) for all other services. Run the following command to enable mTLS across your cluster:
 
-    ```shell
-    cat <<EOF | kubectl replace -f -
-    apiVersion: "authentication.istio.io/v1alpha1"
-    kind: "MeshPolicy"
-    metadata:
-      name: "default"
-    spec:
-      peers:
-      - mtls: {}
-    ---
-    apiVersion: "networking.istio.io/v1alpha3"
-    kind: "DestinationRule"
-    metadata:
-      name: "destination"
-    spec:
-      host: "*.local"
-      trafficPolicy:
-        tls:
-          mode: ISTIO_MUTUAL
-    ---
-    apiVersion: networking.istio.io/v1alpha3
-    kind: DestinationRule
-    metadata:
-      name: destination-rule-guestbook
-    spec:
-      host: guestbook
-      subsets:
-      - name: v1
-        labels:
-          version: "1.0"
-      - name: v2
-        labels:
-          version: "2.0"
-      trafficPolicy:
-        tls:
-          mode: ISTIO_MUTUAL
-    EOF
-    ```
+```shell
+cat <<EOF | kubectl apply -f -
+apiVersion: "authentication.istio.io/v1alpha1"
+kind: "MeshPolicy"
+metadata:
+  name: "default"
+spec:
+  peers:
+  - mtls: {}
+---
+apiVersion: "networking.istio.io/v1alpha3"
+kind: "DestinationRule"
+metadata:
+  name: "destination"
+spec:
+  host: "*.local"
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: destination-rule-guestbook
+spec:
+  host: guestbook
+  subsets:
+  - name: v1
+    labels:
+      version: "1.0"
+  - name: v2
+    labels:
+      version: "2.0"
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+EOF
+```
    
    You should see:
     
@@ -169,7 +169,7 @@ Output:
           (Non-matching subsets v1)
       Traffic Policy TLS Mode: ISTIO_MUTUAL
     Pod is STRICT and clients are ISTIO_MUTUAL
-    
+
     Exposed on Ingress Gateway http://159.23.74.230
     VirtualService: virtual-service-guestbook
       1 HTTP route(s)
