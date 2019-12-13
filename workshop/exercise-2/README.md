@@ -10,7 +10,7 @@ Managed Istio is available as part of IBM Cloud™ Kubernetes Service. The servi
     ibmcloud ks cluster addon enable istio --cluster $MYCLUSTER
     ```
 
-2. Ensure that the `istio-*` Kubernetes services are deployed before you continue. This might take up to 30 seconds.
+2. Ensure that the `istio-*` Kubernetes services are deployed before you continue. This might take up to 5 minutes.
 
     ```shell
     kubectl get svc -n istio-system
