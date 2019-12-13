@@ -212,48 +212,48 @@ Istio support Role Based Access Control(RBAC) for HTTP services in the service m
 
 3. Create a `AuthorizationPolicy` to disable all access to analyzer service.  This will effectively not allow guestbook or any services to access it.
 
-    ```shell
-    cat <<EOF | kubectl create -f -
-    apiVersion: security.istio.io/v1beta1
-    kind: AuthorizationPolicy
-    metadata:
-      name: analyzeraccess
-    spec:
-      selector:
-        matchLabels:
-          app: analyzer
-    EOF
-    ```
+```shell
+cat <<EOF | kubectl create -f -
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: analyzeraccess
+spec:
+  selector:
+    matchLabels:
+      app: analyzer
+EOF
+```
 
-    Output:
+Output:
 
-    ```shell
-    authorizationpolicy.security.istio.io/analyzeraccess created
-    ```
+```shell
+authorizationpolicy.security.istio.io/analyzeraccess created
+```
     
 4.  Visit the Guestbook app from your favorite browser and validate that Guestbook V1 continues to work while Guestbook V2 will not run correctly. For every new message you write on the Guestbook v2 app, you will get a message such as "Error - unable to detect Tone from the Analyzer service".  It can take up to 15 seconds for the change to propogate to the envoy sidecar(s) so you may not see the error right away.
 
 5. Configure the Analyzer service to only allow access from the Guestbook service using the added `rules` section:
 
-    ```
-    cat <<EOF | kubectl apply -f -
-    apiVersion: security.istio.io/v1beta1
-    kind: AuthorizationPolicy
-    metadata:
-      name: analyzeraccess
-    spec:
-      selector:
-        matchLabels:
-          app: analyzer
-      rules:
-      - from:
-        - source:
-            principals: ["cluster.local/ns/default/sa/guestbook"]
-        to:
-        - operation:
-            methods: ["POST"]
-    EOF
-    ```
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: analyzeraccess
+spec:
+  selector:
+    matchLabels:
+      app: analyzer
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/default/sa/guestbook"]
+    to:
+    - operation:
+        methods: ["POST"]
+EOF
+```
 
 6.  Visit the Guestbook app from your favorite browser and validate that Guestbook V2 works now.  It can take a few seconds for the change to propogate to the envoy sidecar(s) so you may not observe Guestbook V2 to function right away.
 
