@@ -96,7 +96,7 @@ EOF
    Confirm the policy for the receiving services to use mTLS has been created:
     
    ```shell
-   kubectl get meshpolicie
+   kubectl get meshpolicies
    ```
    
    Output:
