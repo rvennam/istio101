@@ -240,18 +240,18 @@ Istio support Role Based Access Control(RBAC) for HTTP services in the service m
     apiVersion: security.istio.io/v1beta1
     kind: AuthorizationPolicy
     metadata:
-    name: analyzeraccess
+      name: analyzeraccess
     spec:
-    selector:
-      matchLabels:
-        app: analyzer
-    rules:
-    - from:
-      - source:
-          principals: ["cluster.local/ns/default/sa/guestbook"]
-      to:
-      - operation:
-          methods: ["POST"]
+      selector:
+        matchLabels:
+          app: analyzer
+      rules:
+      - from:
+        - source:
+            principals: ["cluster.local/ns/default/sa/guestbook"]
+        to:
+        - operation:
+            methods: ["POST"]
     EOF
     ```
 
