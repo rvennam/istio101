@@ -1,6 +1,5 @@
 # Exercise 4 - Monitoring
 
-This exercise is still being updated. Head to the next exercise!
 
 <!-- ## Using IBM Log Analysis with LogDNA
 
@@ -32,7 +31,7 @@ The service plan that you choose for an IBM Log Analysis with LogDNA instance de
 {% hint style='tip' %}
 Find more about IBM Log Analysis with LogDNA in the [IBM Cloud documentation](https://cloud.ibm.com/docs/services/Log-Analysis-with-LogDNA/index.html#getting-started).
 {% endhint %} -->
-<!-- 
+
 ## Using IBM Cloud Monitoring with Sysdig
 
 The IBM Cloud™ Monitoring with Sysdig service is a fully managed enterprise-grade monitoring service. You get deep container visibility, service-oriented views and comprehensive metrics. You can use this to gain operational visibility for your applications, services, and platform. Sysdig offers administrators, DevOps teams and developers advanced features to monitor and troubleshoot, define alerts, and design custom views.
@@ -67,11 +66,10 @@ Wait 10 minutes. You just installed the Sysdig monitoring agent into the cluster
 
 {% hint style='tip' %}
 Find more about IBM Cloud Monitoring with Sysdig in the [IBM Cloud documentation](https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig/index.html#getting-started).
-{% endhint %} -->
+{% endhint %}
 
-<!-- 4. After you've finished, DELETE the sysdig service.  You can do this from your [resources list](https://cloud.ibm.com/resources). 
 
-![Sysdig dashboard](../README_images/delete-service.png) -->
+![Sysdig dashboard](../README_images/delete-service.png)
 
 
 #### [Continue to Exercise 5 - Expose the service mesh with the Istio Ingress Gateway](../exercise-5/README.md)
