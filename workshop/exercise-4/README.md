@@ -45,9 +45,9 @@ You can read more about how [Istio mixer enables telemetry reporting](https://is
 1.  Expose Grafana on the Load Balancer so you can access it over the web:
 
     ```shell
-    kubectl expose deployment grafana -n istio-system --name=grafana-external --type=LoadBalancer
+    kubectl expose deployment grafana -n istio-system --name=grafana-external --type=LoadBalancer --port=80 --target-port=3000
     ```
-    > Note: Generally, you would want to secure Grafana before you do this. You could also securely port-forward Grafana to your local machine if you're using `kubectl` on your local terminal.
+    > Note: Generally, you would want to secure Grafana before you do this. You could also securely port-forward Grafana to your local machine if you're using `istioctl dashboard grafana` on your local terminal.
 
 2.  Grab the URL to access your Grafana dashboard:
 
@@ -61,7 +61,7 @@ You can read more about how [Istio mixer enables telemetry reporting](https://is
     grafana-external   LoadBalancer   172.21.177.42   <your_ip_here>  3000:32011/TCP   114s
     ```
 
-    Combine the External IP and the port 3000 to access Grafana: `http://your-ip-here:3000`
+    Go to the External IP to access Grafana: `http://your-ip-here/`
 
 3.  Click on Home -> Istio -> Istio Service Dashboard.
 4.  Select `guestbook` in the Service drop down.
@@ -127,7 +127,7 @@ Kiali is an open-source project that installs as an add-on on top of Istio to vi
 1.  Expose Kiali on the Load Balancer so you can access it over the web:
 
     ```shell
-    kubectl expose deployment kiali -n istio-system --name=kiali-external --type=LoadBalancer --port=20001
+    kubectl expose deployment kiali -n istio-system --name=kiali-external --type=LoadBalancer --port=80 --target-port=20001
     ```
 
 2.  Grab the URL to access your Kiali dashboard:
@@ -142,7 +142,7 @@ Kiali is an open-source project that installs as an add-on on top of Istio to vi
     kiali-external   LoadBalancer   172.21.18.146   <your_ip_here>  20001:31374/TCP   3m52s
     ```
 
-    Combine the External IP and the port 20001 to access Kiali: `http://your-ip-here:20001`
+    Visit the External IP to access Kiali: `http://your-ip-here/`
 
 3.  If you see an error message "The Kiali secret is missing...", wait a couple of minutes and hit Refresh.
 4.  Login with the following username/password: `admin/admin`.
