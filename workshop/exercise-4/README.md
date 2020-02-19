@@ -47,7 +47,7 @@ You can read more about how [Istio mixer enables telemetry reporting](https://is
     ```shell
     kubectl expose deployment grafana -n istio-system --name=grafana-external --type=LoadBalancer --port=80 --target-port=3000
     ```
-    > Note: Generally, you would want to secure Grafana before you do this. You could also securely port-forward Grafana to your local machine if you're using `istioctl dashboard grafana` on your local terminal.
+    > Note: Normally, you would securely port-forward to Grafana on your local machine by running `istioctl dashboard grafana`.
 
 2.  Grab the URL to access your Grafana dashboard:
 
