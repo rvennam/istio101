@@ -5,7 +5,7 @@ For this lab, a web shell is provided for you with all the necessary tools. Use 
 
 Using Chrome or Firefox:
 
-1.  Navigate to [IBM Cloud](cloud.ibm.com)
+1.  Navigate to [IBM Cloud](https://cloud.ibm.com)
 2.  Choose the IBM account
 3.  Click the Cloud Shell icon on the top right.
 
