@@ -1,12 +1,12 @@
 # Accessing a Kubernetes cluster with IBM Cloud Kubernetes Service
 
 ## Connect to your cluster using the Cloud Shell
-For this lab, a web shell is provided for you with all the necessary tools. Use this web shell to perform the tasks in this lab. If you are having problems with this web shell, you can use a local docker container and follow the instructions [here](https://github.com/rvennam/istio101/blob/docker-env/workshop/exercise-1/README.md) instead.
+For this lab, a web shell is provided for you with all the necessary tools. Use this web shell to perform the tasks in this lab.
 
 Using Chrome or Firefox:
 
 1.  Navigate to [IBM Cloud](https://cloud.ibm.com)
-2.  Choose the IBM account
+2.  Choose the `1835659 - IBM` account
 3.  Click the Cloud Shell icon on the top right.
 
     ![](../README_images/cloudshell.png)
