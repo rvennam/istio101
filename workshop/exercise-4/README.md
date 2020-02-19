@@ -144,7 +144,8 @@ Kiali is an open-source project that installs as an add-on on top of Istio to vi
 
     Combine the External IP and the port 20001 to access Kiali: `http://your-ip-here:20001`
 
-3.  Login with the following username/password: `admin/admin`.
+3.  If you see an error message "The Kiali secret is missing...", wait a couple of minutes and hit Refresh.
+4.  Login with the following username/password: `admin/admin`.
 4.  Click the "Graph" tab on the left side and select the default namespace to see the a visual service graph of the various services in your Istio mesh. You can see request rates as well by clicking the "Edge Labels" tab and choosing "Traffic rate per second".
 
     > Info: You'll need to access your Guestbook application and type an entry for the graph to be generated and connected properly.
