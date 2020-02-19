@@ -91,7 +91,7 @@ The Redis database is a service that you can use to persist the data of your app
 
 ## Install the Guestbook app
 
-1.  Inject the Istio Envoy sidecar into the guestbook pods, and deploy the Guestbook app on to the Kubernetes cluster. Deploy both the v1 and v2 versions of the app:
+1.  Deploy the Guestbook app on to the Kubernetes cluster. Deploy both the v1 and v2 versions of the app:
 
     ```shell
     kubectl apply -f ../v1/guestbook-deployment.yaml
