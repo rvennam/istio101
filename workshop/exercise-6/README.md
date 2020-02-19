@@ -26,7 +26,7 @@ Let's examine the rule:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: destination-guestbook
+  name: destination-rule-guestbook
 spec:
   host: guestbook
   subsets:
@@ -159,10 +159,54 @@ spec:
 EOF
 ```
 
-### Implementing circuit breakers with destination rules
-Istio `DestinationRules` allow users to configure Envoy's implementation of [circuit breakers](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/circuit_breaking). Circuit breakers are critical for defining the behavior for service-to-service communication in the service mesh. In the event of a failure for a particular service, circuit breakers allow users to set global defaults for failure recovery on a per service and/or per service version basis. Users can apply a [traffic policy](https://istio.io/docs/reference/config/istio.networking.v1alpha3.html#TrafficPolicy) at the top level of the `DestinationRule` to create circuit breaker settings for an entire service, or it can be defined at the subset level to create settings for a particular version of a service.
+### Secure your mesh! Enable mTLS between your microservices
 
-Depending on whether a service handles [HTTP](https://istio.io/docs/reference/config/istio.networking.v1alpha3/#ConnectionPoolSettings.HTTPSettings) requests or [TCP](https://istio.io/docs/reference/config/istio.networking.v1alpha3/#ConnectionPoolSettings.TCPSettings) connections, `DestinationRules` expose a number of ways for Envoy to limit traffic to a particular service as well as define failure recovery behavior for services initiating the connection to an unhealthy service.
+1. To set a mesh-wide authentication policy that enables mutual TLS, submit the following policy. This policy specifies that all workloads in the mesh will only accept encrypted requests using TLS.
+```shell
+kubectl apply -f - <<EOF
+apiVersion: "authentication.istio.io/v1alpha1"
+kind: "MeshPolicy"
+metadata:
+  name: "default"
+spec:
+  peers:
+  - mtls: {}
+EOF
+```
+2. To configure the client side, we need to modify our previous destination rules to use ISTIO_MUTUAL. Note: In the next version of Istio (1.5 with auto-mTLS), this step is no longer requried.
+```shell
+kubectl replace -f - <<EOF
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: destination-rule-guestbook
+spec:
+  host: guestbook
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+  subsets:
+    - name: v1
+      labels:
+        version: '1.0'
+    - name: v2
+      labels:
+        version: '2.0'
+EOF
+```
+3. Visit your guestbook application by going to it in your browser. Everything should be working as expected! To confirm mTLS is infact enabled, you can run:
+```shell
+istioctl x describe service guestbook
+```
+Example output
+```
+Service: guestbook
+   Port: http 80/HTTP targets pod port 3000
+DestinationRule: destination-rule-guestbook for "guestbook"
+   Matching subsets: v1,v2
+   Traffic Policy TLS Mode: ISTIO_MUTUAL
+Pod is STRICT and clients are ISTIO_MUTUAL
+```
 
 ## That's all!
 
