@@ -26,7 +26,7 @@ Let's examine the rule:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: destination-guestbook
+  name: destination-rule-guestbook
 spec:
   host: guestbook
   subsets:
@@ -138,7 +138,7 @@ View the guestbook application using the `$NLB_HOSTNAME` specified in [Exercise 
 
 ### Route all traffic to v2
 
-For the following exercises, we'll be working with Guestbook v2. Route all traffic to guestbook v2 with a new VirtualService rule:
+Route all traffic to guestbook v2 with a new VirtualService rule:
 
 ```shell
 cat <<EOF | kubectl replace -f -

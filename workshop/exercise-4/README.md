@@ -42,75 +42,105 @@ You can read more about how [Istio mixer enables telemetry reporting](https://is
 
 #### Grafana
 
-1. Establish port forwarding from local port 8082 to the Grafana instance:
+1.  Expose Grafana on the Load Balancer so you can access it over the web:
 
     ```shell
-    kubectl -n istio-system port-forward \
-      $(kubectl -n istio-system get pod -l app=grafana -o jsonpath='{.items[0].metadata.name}') \
-      8082:3000
+    kubectl expose deployment grafana -n istio-system --name=grafana-external --type=LoadBalancer --port=80 --target-port=3000
+    ```
+    > Note: Normally, you would securely port-forward to Grafana on your local machine by running `istioctl dashboard grafana`.
+
+2.  Grab the URL to access your Grafana dashboard:
+
+    ```shell
+    kubectl get svc/grafana-external -n istio-system
     ```
 
-2. Click on the web preview icon (an eye) and select port 8082.
+    Sample output:
+    ```
+    NAME               TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)          AGE
+    grafana-external   LoadBalancer   172.21.177.42   <your_ip_here>  3000:32011/TCP   114s
+    ```
 
-![](../README_images/webpreview1.png)
+    Go to the External IP to access Grafana: `http://your-ip-here/`
 
 3. Click on Home -> Istio -> Istio Service Dashboard.
-4. Select guestbook in the Service drop down.
+4.  Select `guestbook` in the Service drop down.
 5. In a different tab, visit the guestbook application and refresh the page multiple times to generate some load.
 
 ![](../README_images/grafana.png)
 
-This Grafana dashboard provides metrics for each workload. Explore the other dashboard provided as well.
+This Grafana dashboard provides metrics for each workload. Explore the other dashboards provided as well.
 
-6. Use Ctrl-C in the cloudshell to exit the port-foward when you are done.
+<!-- #### Prometheus
 
-#### Prometheus
-
-1. Establish port forwarding from local port 8083 to the Prometheus pod.
+1. Expose Prometheus on the Load Balancer so you can access it over the web:
 
     ```shell
-    kubectl -n istio-system port-forward \
-      $(kubectl -n istio-system get pod -l app=prometheus -o jsonpath='{.items[0].metadata.name}') \
-      8083:9090
+    kubectl expose deployment prometheus -n istio-system --name=prometheus-external --type=LoadBalancer
     ```
-2. Click on the web preview icon and select port 8083, and in the “Expression” input box, enter: `istio_request_bytes_count`. Click Execute.
-3. Then try another query: `istio_requests_total{destination_service="guestbook.default.svc.cluster.local", destination_version="2.0"}`
+
+2. Grab the URL to access your Prometheus dashboard:
+
+    ```shell
+    kubectl get svc/prometheus-external -n istio-system
+    ```
+
+    Sample output:
+    ```
+    NAME                  TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)          AGE
+    prometheus-external   LoadBalancer   172.21.177.42   <your_ip_here>  9090:32357/TCP   8s
+    ```
+    Combine the External IP and the port 9090 to access Prometheus: `http://your-ip-here:3000`
+3. Click on the web preview icon and select port 8083, and in the “Expression” input box, enter: `istio_request_bytes_count`. Click Execute.
+4. Then try another query: `istio_requests_total{destination_service="guestbook.default.svc.cluster.local", destination_version="2.0"}`
 
 ![](../README_images/prometheus.jpg)
 
-4. Explore the Graph tab as well.
-5. Use Ctrl-C to exit the port-foward when you are done.
+5. Explore the Graph tab as well.
+6. Use Ctrl-C to exit the port-foward when you are done. -->
 
 #### Kiali
 
 Kiali is an open-source project that installs as an add-on on top of Istio to visualize your service mesh. It provides deeper insight into how your microservices interact with one another, and provides features such as circuit breakers and request rates for your services.
 
 1. Create a secret which will be used to set the login credentials for Kiali
-```
-cat <<EOF | kubectl apply -f -
-apiVersion: v1
-kind: Secret
-metadata:
-  name: kiali
-  namespace: istio-system
-  labels:
-    app: kiali
-type: Opaque
-data:
-  username: "YWRtaW4="
-  passphrase: "YWRtaW4="
-EOF
+
+    > ```shell
+    > cat <<EOF | kubectl apply -f -
+    > apiVersion: v1
+    > kind: Secret
+    > metadata:
+    >   name: kiali
+    >   namespace: istio-system
+    >   labels:
+    >     app: kiali
+    > type: Opaque
+    > data:
+    >   username: "YWRtaW4="
+    >   passphrase: "YWRtaW4="
+    > EOF
+    > ```
+1.  Expose Kiali on the Load Balancer so you can access it over the web:
+    ```shell
+    kubectl expose deployment kiali -n istio-system --name=kiali-external --type=LoadBalancer --port=80 --target-port=20001
 ```
 
-1. Establish port forwarding to the Kiali pod from local port 8084.
+2.  Grab the URL to access your Kiali dashboard:
 
     ```shell
-    kubectl -n istio-system port-forward \
-        $(kubectl -n istio-system get pod -l app=kiali -o jsonpath='{.items[0].metadata.name}') \
-        8084:20001
+    kubectl get svc/kiali-external -n istio-system
     ```
-2. Click on the web preview icon and select port 8084 to access the Kiali dashboard. Login with the following username/password: `admin/admin`.
+
+    Sample output:
+    ```
+    NAME             TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)           AGE
+    kiali-external   LoadBalancer   172.21.18.146   <your_ip_here>  20001:31374/TCP   3m52s
+    ```
+    Visit the External IP to access Kiali: `http://your-ip-here/`
+3.  If you see an error message "The Kiali secret is missing...", wait a couple of minutes and hit Refresh.
+4.  Login with the following username/password: `admin/admin`.
 4. Click the "Graph" tab on the left side and select the default namespace to see the a visual service graph of the various services in your Istio mesh. You can see request rates as well by clicking the "Edge Labels" tab and choosing "Traffic rate per second".
+    > Info: You'll need to access your Guestbook application and type an entry for the graph to be generated and connected properly.
 5. In a different tab, visit the guestbook application and refresh the page multiple times to generate some load.
 
 Kiali has a number of views to help you visualize your services. Click through the various tabs to explore the service graph, and the various views for workloads, applications and services.

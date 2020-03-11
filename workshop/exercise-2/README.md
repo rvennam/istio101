@@ -3,16 +3,19 @@
 In this module, you will use the Managed Istio add-on to install Istio on your cluster. 
 
 Managed Istio is available as part of IBM Cloud™ Kubernetes Service. The service provides seamless installation of Istio, automatic updates and lifecycle management of control plane components, and integration with platform logging and monitoring tools.
+  
+1.  Navigate to your cluster in the [IBM Cloud Dashboard](https://cloud.ibm.com/kubernetes/clusters), switch to the `Add-ons` tab and install Istio:
 
-1. Run this commmand to install Managed Istio:
-
-    ```shell
+    ![](../README_images/istioinstall.png)
+    <!-- ```shell
     ibmcloud ks cluster addon enable istio --cluster $MYCLUSTER
+    ``` -->
+
+    > Remember to switch to the IBM account where the cluster exists. It can take up to 5 minutes for the install to begin.
+
+2.  After waiting, check that the `istio-*` Kubernetes services are deployed before you continue.
+
     ```
-
-2. Ensure that the `istio-*` Kubernetes services are deployed before you continue. This might take up to 5 minutes.
-
-    ```shell
     kubectl get svc -n istio-system
     ```
 
@@ -38,7 +41,9 @@ Managed Istio is available as part of IBM Cloud™ Kubernetes Service. The servi
 
     ```
 
-3. Ensure the corresponding pods `istio-citadel-*`, `istio-ingressgateway-*`, `istio-pilot-*`, and `istio-policy-*` are all in **`Running`** state before you continue.
+    **Note: If your istio-ingressgateway service IP is `<pending>`, please check with the lab instructor before proceeding.**
+
+1.  Ensure the corresponding pods `istio-citadel-*`, `istio-ingressgateway-*`, `istio-pilot-*`, and `istio-policy-*` are all in **`Running`** state before you continue.
 
     ```shell
     kubectl get pods -n istio-system
@@ -62,8 +67,15 @@ Managed Istio is available as part of IBM Cloud™ Kubernetes Service. The servi
 
     Before you continue, make sure all the pods are deployed and either in the **`Running`** or **`Completed`** state. If they're in `pending` state, wait a few minutes to let the installation and deployment finish.
 
-    Congratulations! You successfully installed Istio into your cluster.
-
-
-#### [Continue to Exercise 3 - Deploy Guestbook with Istio Proxy](../exercise-3/README.md)
-
+2. Check the version of your Istio:
+    ```shell
+    istioctl version
+    ```
+    Sample output:
+    ```shell
+    client version: 1.4.4
+    control plane version: 1.4.4
+    data plane version: none
+    ```
+    
+Congratulations! You successfully installed Istio into your cluster.
