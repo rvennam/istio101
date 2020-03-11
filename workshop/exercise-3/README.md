@@ -5,7 +5,7 @@ The Guestbook app is a sample app for users to leave comments. It consists of a 
 ![](../README_images/istio1.jpg)
 
 ### Download the Guestbook app
-1. In the web shell, clone the Guestbook app from GitHub into the `workshop` directory.
+1.  Clone the Guestbook app into the `workshop` directory.
 
     ```shell
     git clone -b kubecon2019 https://github.com/IBM/guestbook
@@ -20,13 +20,13 @@ The Guestbook app is a sample app for users to leave comments. It consists of a 
 ### Enable the automatic sidecar injection for the default namespace
 In Kubernetes, a sidecar is a utility container in the pod, and its purpose is to support the main container. For Istio to work, Envoy proxies must be deployed as sidecars to each pod of the deployment. There are two ways of injecting the Istio sidecar into a pod: manually using the istioctl CLI tool or automatically using the Istio sidecar injector. In this exercise, we will use the automatic sidecar injection provided by Istio.
 
-1. Annotate the default namespace to enable automatic sidecar injection:
+1.  Annotate the default namespace to enable automatic sidecar injection:
     
     ``` shell
     kubectl label namespace default istio-injection=enabled
     ```
     
-2. Validate the namespace is annotated for automatic sidecar injection:
+2.  Validate the namespace is annotated for automatic sidecar injection:
     
     ``` shell
     kubectl get namespace -L istio-injection
@@ -43,7 +43,7 @@ In Kubernetes, a sidecar is a utility container in the pod, and its purpose is t
 ### Create a Redis database
 The Redis database is a service that you can use to persist the data of your app. The Redis database comes with a master and slave modules.
 
-1. Create the Redis controllers and services for both the master and the slave.
+1.  Create the Redis controllers and services for both the master and the slave.
 
     ``` shell
     kubectl create -f redis-master-deployment.yaml
@@ -52,19 +52,19 @@ The Redis database is a service that you can use to persist the data of your app
     kubectl create -f redis-slave-service.yaml
     ```
 
-2. Verify that the Redis controllers for the master and the slave are created.
+2.  Verify that the Redis controllers for the master and the slave are created.
 
     ```shell
     kubectl get deployment
     ```
     Output:
     ```shell
-    NAME           DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-    redis-master   1         1         1            1           5d
-    redis-slave    2         2         2            2           5d
+    NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+    redis-master   1/1     1            1           2m16s
+    redis-slave    2/2     2            2           2m15s
     ```
 
-3. Verify that the Redis services for the master and the slave are created.
+3.  Verify that the Redis services for the master and the slave are created.
 
     ```shell
     kubectl get svc
