@@ -168,7 +168,7 @@ Create Watson Tone Analyzer in your own account.
     ibmcloud resource service-key tone-analyzer-key
     ``` 
 
-1. Open the web file browser by clicking the Pen icon. 
+<!-- 1. Open the web file browser by clicking the Pen icon. 
 
     ![](../README_images/fileeditor.png)
 
@@ -178,13 +178,25 @@ Create Watson Tone Analyzer in your own account.
 
 1. Navigate to `istio101/workshop/guestbook/v2/analyzer-deployment.yaml`
 
-![](../README_images/fileeditor2.png)
+![](../README_images/fileeditor2.png) -->
+
+1. Copy the apikey
+
+1. Edit istio101/workshop/guestbook/v2/analyzer-deployment.yaml by running:
+   ```
+   nano analyzer-deployment.yaml
+   ```
+
+1. Find the env: section near the end of the file. 
+2. Replace YOUR_API_KEY with the apikey you got in the previous step.  Look at the screenshot below for an example.
+3. Replace YOUR_URL with `https://gateway.watsonplatform.net/tone-analyzer/api`. Look at the screenshot below for an example.
+4. Save by pressing Ctrl-X and S to Save.
+
+![](../README_images/watson-api.png)
+
+<!-- 2. Find the env section near the end of the file. Replace YOUR_API_KEY with the API_KEY provided earlier. YOUR_URL should be edited to be `https://gateway.watsonplatform.net/tone-analyzer/api`. If you created the service in `au-syd`, this URL should instead be: `https://gateway-syd.watsonplatform.net/tone-analyzer/api` Save the file and close the web file browser. -->
 
 
-1. Find the env section near the end of the file. Replace YOUR_API_KEY with the API_KEY provided earlier. YOUR_URL should be edited to be `https://gateway.watsonplatform.net/tone-analyzer/api`. If you created the service in `au-syd`, this URL should instead be: `https://gateway-syd.watsonplatform.net/tone-analyzer/api` Save the file and close the web file browser.
-
-
-Note: You may have trouble editing this file with some browsers, particularly Edge. If you're having trouble, try clicking the name of the file in the top tab, and then moving your cursor and making edits using the arrow keys and keyboard. `ctrl+c` is copy, and `ctrl+v` is paste.
 
 1.   Deploy the analyzer pods and service, using the `analyzer-deployment.yaml` and `analyzer-service.yaml` files found in the `guestbook/v2` directory. The analyzer service talks to Watson Tone Analyzer to help analyze the tone of a message. Ensure you are still in the `guestbook/v2` directory.
 

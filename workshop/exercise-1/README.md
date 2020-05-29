@@ -8,7 +8,7 @@ For this lab, a web shell is provided for you with all the necessary tools. Use 
 Using Chrome or Firefox:
 
 1.  Navigate to [IBM Cloud](https://cloud.ibm.com)
-2.  Choose the `1835659 - IBM` account
+2.  Choose the `1717629 - Ramratan Vennam` account
 3.  Click the Cloud Shell icon on the top right.
 
     ![](../README_images/cloudshell.png)
@@ -30,38 +30,31 @@ Learn how to set the context to work with your cluster by using the `kubectl` CL
     export MYCLUSTER=<your_cluster_name>
     ```
 
-    c. Download the configuration file and certificates for your cluster using the `cluster-config` command.
+    c. Download the configuration file and certificates for your cluster using the `cluster config` command.
 
     ```shell
-    ibmcloud ks cluster config $MYCLUSTER
+    ibmcloud ks cluster config --cluster $MYCLUSTER
     ```
 
-    d. Copy and paste the output command from the previous step to set the `KUBECONFIG` environment variable and configure your CLI to run `kubectl` commands against your cluster.
-
-    Example: (_Do not copy/paste this exact command, but your result from the previous command_)
-    
-    ```shell
-    export KUBECONFIG=/Users/user-name/.bluemix/plugins/container-service/clusters/mycluster/kube-config-hou02-mycluster.yml
-    ```
 
 2.  Get basic information about your cluster and its worker nodes. This information can help you manage your cluster and troubleshoot issues.
 
     a.  View details of your cluster.
 
     ```shell
-    ibmcloud ks cluster get $MYCLUSTER
+    ibmcloud ks cluster get --cluster $MYCLUSTER
     ```
 
     b.  Verify the worker nodes in the cluster.
 
     ```shell
-    ibmcloud ks workers $MYCLUSTER
+    ibmcloud ks workers --cluster $MYCLUSTER
     ```
 
 3.  Validate access to your cluster by viewing the nodes in the cluster.
 
     ```shell
-    kubectl get node
+    kubectl get nodes
     ```
 
 ## Clone the lab repo

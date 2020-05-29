@@ -42,6 +42,23 @@ You can read more about how [Istio mixer enables telemetry reporting](https://is
 
 #### Grafana
 
+1. Create a secret which will be used to set the login credentials for Kiali
+
+
+```shell
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: grafana
+  namespace: istio-system
+type: Opaque
+data:
+  username: "YWRtaW4="
+  passphrase: "YWRtaW4="
+EOF
+```
+    
 1.  Expose Grafana on the Load Balancer so you can access it over the web:
 
     ```shell
@@ -70,6 +87,10 @@ You can read more about how [Istio mixer enables telemetry reporting](https://is
 ![](../README_images/grafana.png)
 
 This Grafana dashboard provides metrics for each workload. Explore the other dashboards provided as well.
+6. Delete the service when you're done
+```shell
+kubectl delete service grafana-external -n istio-system
+```
 
 <!-- #### Prometheus
 
@@ -147,6 +168,3 @@ Kiali has a number of views to help you visualize your services. Click through t
 
 ![](../README_images/kiali.png) 
 
-
-
-#### [Continue to the next Exercise](../exercise-4b/README.md)

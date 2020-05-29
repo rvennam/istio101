@@ -53,7 +53,7 @@ Let's leverage this feature with Istio ingress gateway:
     ibmcloud login
     ```
 
-1. Choose IBM as the Account (NOT your own)
+1. Choose the account where the cluster is in. NOT your own account!
 
 1. Create the NLB host with the Istio ingress gateway's public IP address:
 
