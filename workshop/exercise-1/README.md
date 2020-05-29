@@ -11,7 +11,7 @@ Using Chrome or Firefox:
 2.  Choose the `1717629 - Ramratan Vennam` account
 3.  Click the Cloud Shell icon on the top right.
 
-    ![](../README_images/cloudshell.png)
+    <!-- ![](../README_images/cloudshell.png) -->
 
 ## Access your cluster
 Learn how to set the context to work with your cluster by using the `kubectl` CLI, access the Kubernetes dashboard, and gather basic information about your cluster.
