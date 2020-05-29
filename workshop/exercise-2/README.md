@@ -6,16 +6,11 @@ Managed Istio is available as part of IBM Cloud™ Kubernetes Service. The servi
   
 1.  Navigate to your cluster in the [IBM Cloud Dashboard](https://cloud.ibm.com/kubernetes/clusters), switch to the `Add-ons` tab and install Istio:
 
-    ![](../README_images/istioinstall.png)
-<!-- 
-```shell
-ibmcloud ks cluster addon enable istio --cluster $MYCLUSTER
-``` 
--->
+![](../README_images/istioinstall.png)
 
     > Remember to switch to the IBM account where the cluster exists. It can take up to 5 minutes for the install to begin.
 
-2.  After waiting, check that the `istio-*` Kubernetes services are deployed before you continue.
+1.  After waiting, check that the `istio-*` Kubernetes services are deployed before you continue.
 
     ```
     kubectl get svc -n istio-system
