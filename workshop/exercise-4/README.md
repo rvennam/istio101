@@ -78,7 +78,7 @@ EOF
     grafana-external   LoadBalancer   172.21.177.42   <your_ip_here>  3000:32011/TCP   114s
     ```
 
-    Go to the External IP to access Grafana: `http://your-ip-here/`
+    Go to the External IP to access Grafana: `http://your-ip-here/` Login with admin/admin
 
 3. Click on Home -> Istio -> Istio Service Dashboard.
 4.  Select `guestbook` in the Service drop down.
