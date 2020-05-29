@@ -7,9 +7,11 @@ Managed Istio is available as part of IBM Cloud™ Kubernetes Service. The servi
 1.  Navigate to your cluster in the [IBM Cloud Dashboard](https://cloud.ibm.com/kubernetes/clusters), switch to the `Add-ons` tab and install Istio:
 
     ![](../README_images/istioinstall.png)
-    <!-- ```shell
-    ibmcloud ks cluster addon enable istio --cluster $MYCLUSTER
-    ``` -->
+<!-- 
+```shell
+ibmcloud ks cluster addon enable istio --cluster $MYCLUSTER
+``` 
+-->
 
     > Remember to switch to the IBM account where the cluster exists. It can take up to 5 minutes for the install to begin.
 
@@ -30,7 +32,7 @@ istiod                 ClusterIP      172.21.81.153    <none>          15012/TCP
 
     **Note: If your istio-ingressgateway service IP is `<pending>`, please check with the lab instructor before proceeding.**
 
-1.  Ensure the corresponding pods `istio-citadel-*`, `istio-ingressgateway-*`, `istio-pilot-*`, and `istio-policy-*` are all in **`Running`** state before you continue.
+1.  Ensure the corresponding pods are all in **`Running`** state before you continue.
 
     ```shell
     kubectl get pods -n istio-system

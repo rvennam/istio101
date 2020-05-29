@@ -175,4 +175,4 @@ Depending on whether a service handles [HTTP](https://istio.io/docs/reference/co
 
 
 
-#### [Continue to Exercise 7 - Security](../exercise-7/README.md)
+<!-- #### [Continue to Exercise 7 - Security](../exercise-7/README.md) -->
