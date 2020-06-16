@@ -47,7 +47,7 @@ You can run the IBM Cloud Kubernetes Service ALB, an API gateway of your choice,
 Let's leverage this feature with Istio ingress gateway:
 
 
-1. Switch back the `ibmcloud` CLI to the **IBM** Lab account by logging in again:
+1. Switch back the `ibmcloud` CLI to the Instructor account by logging in again:
 
     ```shell
     ibmcloud login
