@@ -18,7 +18,7 @@ After you complete this course, you'll be able to:
 ## Workshop
 You will perform the following exercises in the lab.
 
-- [Get Started - Create Account and get cluster](GETSTARTED.md)
+- [Get Started - Create Account and get cluster](./GETSTARTED.md)
 - [Exercise 1 - Accessing a Kubernetes cluster](exercise-1/README.md)
 - [Exercise 2 - Installing Istio](exercise-2/README.md)
 - [Exercise 3 - Deploying Guestbook with Istio Proxy](exercise-3/README.md)
