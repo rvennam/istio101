@@ -9,8 +9,6 @@ Learn how Kubernetes and Istio give you full control over your microservices. Ku
 
 ![https://youtu.be/6zDrLvpfCK4](https://youtu.be/6zDrLvpfCK4)
 
-[Get Started](GETSTARTED.md)
-
 ### Lab Instructors
 
 - Ram Vennam
