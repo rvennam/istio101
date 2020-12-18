@@ -21,7 +21,6 @@ Managed Istio is available as part of IBM Cloud™ Kubernetes Service. The servi
     NAME                   TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                                                                                                                                      AGE
 istio-egressgateway    ClusterIP      172.21.209.144   <none>          80/TCP,443/TCP,15443/TCP                                                                                                                     4s
 istio-ingressgateway   LoadBalancer   172.21.51.220    169.60.178.59   15020:32244/TCP,80:31639/TCP,443:31363/TCP,15029:30007/TCP,15030:30227/TCP,15031:32426/TCP,15032:31808/TCP,31400:31369/TCP,15443:31486/TCP   2s
-istio-pilot            ClusterIP      172.21.255.75    <none>          15010/TCP,15011/TCP,15012/TCP,8080/TCP,15014/TCP,443/TCP                                                                                     2s
 istiod                 ClusterIP      172.21.81.153    <none>          15012/TCP,443/TCP                                                                                                                            2s
     ```
 
@@ -51,16 +50,28 @@ istiod-cbb98c74d-kcr4d                  1/1     Running   0          67s
     ```
     Sample output:
     ```shell
-    client version: 1.4.6
-    control plane version: 1.5.4
-    data plane version: 1.5.4 (4 proxies)
+    client version: 1.8.1
+    control plane version: 1.8.1
     ```
-
-3. Enable Istio monitoring dashboards, by running these two commands:
-   ```shell
-   kubectl patch cm managed-istio-custom -n ibm-operators --type='json' -p='[{"op": "add", "path": "/data/istio-monitoring", "value":"true"}]'
-   ```
-   ```
-   kubectl annotate iop -n ibm-operators managed-istio --overwrite version="custom-applied-at: $(date)"
-   ```
 Congratulations! You successfully installed Istio into your cluster.
+
+
+## Install the monitoring dashboards
+
+1. Install grafana
+```
+kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.8/samples/addons/grafana.yaml
+
+```
+2. Install Jaeger
+```
+kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.8/samples/addons/jaeger.yaml
+```
+3. Install Kiali
+```
+kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.8/samples/addons/kiali.yaml
+```
+4. Install Prometheus
+```
+kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.8/samples/addons/prometheus.yaml
+```
